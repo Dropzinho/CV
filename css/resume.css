@@ -1,0 +1,133 @@
+/* Geral */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.4;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex: 0 0 30%;
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+}
+.sidebar .name {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+.sidebar .title {
+  font-size: 1.25rem;
+  color: #0baddf;
+  margin-bottom: 1.5rem;
+}
+.sidebar section {
+  margin-bottom: 2rem;
+}
+.sidebar .summary p {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.sidebar .contact h3,
+.sidebar .skills h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #0baddf;
+}
+.sidebar .contact p,
+.sidebar .skills ul {
+  font-size: 0.875rem;
+}
+.sidebar .skills ul {
+  list-style: none;
+}
+.sidebar .skills li {
+  margin-bottom: 0.25rem;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+  flex: 1;
+  background: #fff;
+  padding: 2rem 3rem;
+}
+.main-content section {
+  margin-bottom: 2rem;
+}
+.main-content h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #0baddf;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+.main-content .job,
+.main-content .edu-item {
+  margin-bottom: 1.25rem;
+}
+.main-content .job h4,
+.main-content .edu-item h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+.main-content .job time,
+.main-content .edu-item time {
+  font-size: 0.875rem;
+  color: #777;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+.skills {
+  margin-bottom: 2rem;
+}
+.skills .skill {
+  margin-bottom: 1rem;
+}
+.skills .skill span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.skills .progress {
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 8px;
+}
+.skills .progress-bar {
+  height: 100%;
+  background: #0baddf;
+  transition: width 0.8s ease;
+}
+.linkedin-logo {
+  display: block;
+  width: 50px;    /* ajuste o tamanho que preferir */
+  height: auto;
+  margin-top: 0.5rem;
+  transition: transform 0.2s;
+}
+.linkedin-logo:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,144 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+/* Canvas meteoros */
+#meteor-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Menu */
+header .menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: #333;
+  padding: 1rem 0;
+}
+header .menu a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s ease;
+}
+header .menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #0baddf;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+header .menu a:hover,
+header .menu a.active {
+  color: #0baddf;
+}
+header .menu a:hover::after,
+header .menu a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Ripple */
+header .menu a .ripple {
+  position: absolute;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* Hero */
+.hero { text-align: center; padding: 4em 1em; }
+
+/* Seções */
+section { padding: 2em 1em; }
+
+/* Projetos */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1em;
+}
+.project-item img {
+  width: 100%;
+  transition: transform .3s;
+}
+.project-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Formulário */
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.contact label { margin-top: 1em; }
+.contact input,
+.contact textarea {
+  padding: .5em;
+}
+
+/* Responsivo */
+@media(max-width:600px) {
+  header .menu { flex-direction: column; }
+  header .menu a { text-align: center; }
+}
+.skills {
+  margin-bottom: 2rem;
+}
+.skills .skill {
+  margin-bottom: 1rem;
+}
+.skills .skill span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.skills .progress {
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 8px;
+}
+.skills .progress-bar {
+  height: 100%;
+  background: #0baddf;
+  transition: width 0.8s ease;
+}
+.linkedin-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.linkedin-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.linkedin-link:hover .linkedin-icon {
+  transform: scale(1.1);
+}
+/* Limita a largura das imagens de projeto */
+.projects .project-item img {
+  display: block;
+  max-width: 100%;     /* nunca ultrapassa a largura do container */
+  width: 400px;        /* largura desejada (ajuste a gosto) */
+  height: auto;        /* preserva proporção */
+  margin: 1rem auto 0; /* centraliza e dá espaçamento embaixo */
+}

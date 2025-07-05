@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de contato com [Seu Nome]">
+  <title>Contato | Meu Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">Minha trajetória!</a>
+      <a href="portfolio.html">Doom</a>
+      <a href="contact.html" class="active">Contato</a>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Fale Comigo</h2>
+    <form id="contact-form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="form-messages"></div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
